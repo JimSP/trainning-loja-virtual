@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+	layout:decorate="~{layouts/layout}">
+<head>
+<title>Loja Virtual</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link th:href="@{/css/core.css}" rel="stylesheet" media="screen" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<form action="#" th:action="@{/controleAcesso}" th:object="${usuarioDto}" method="post">
+				<label th:text="e-mail" /></td>
+            	<input type="email" th:field="${usuarioDto.email}" /></td>
+            	<br>
+            	<label th:text="senha" /></td>
+            	<input type="password" th:field="${usuarioDto.senha}" /></td>
+            	<br>
+            	<input type="submit" value="entrar" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>

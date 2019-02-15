@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+	layout:decorate="~{layouts/layout}">
+<head>
+<title>Loja Virtual</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link th:href="@{/css/core.css}" rel="stylesheet" media="screen" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-2" layout:fragment="sidebar" align="right" th:if="${!usuarioDto.possuiAcesso}">
+				<a href="/entrar">Entrar</a>
+				<a href="/novo_usuario">Cadastrar</a>
+			</div>
+			
+			<div class="col-2" layout:fragment="sidebar" align="right" th:if="${usuarioDto.possuiAcesso}">
+				<a href="/sair">Sair</a>
+			</div>
+			
+			<div class="col" layout:fragment="content" align="center">
+				<h1>Bem vindo a Loja Virtual. Boas Compras!</h1>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
